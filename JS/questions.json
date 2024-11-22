@@ -1,0 +1,137 @@
+[
+  {
+    "question": "What is the largest planet in our solar system?",
+    "answers": [
+      { "text": "Earth", "state": false },
+      { "text": "Mars", "state": false },
+      { "text": "Saturn", "state": false },
+      { "text": "Jupiter", "state": true }
+    ]
+  },
+  {
+    "question": "Which is the most spoken language in the world?",
+    "answers": [
+      { "text": "English", "state": true },
+      { "text": "Arbaic", "state": false },
+      { "text": "Spanish", "state": false },
+      { "text": "Hindi", "state": false }
+    ]
+  },
+  {
+    "question": "Who discovered gravity?",
+    "answers": [
+      { "text": "Newton", "state": true },
+      { "text": "Einstein", "state": false },
+      { "text": "Galileo", "state": false },
+      { "text": "Archimedes", "state": false }
+    ]
+  },
+  {
+    "question": "What is the chemical symbol for water?",
+    "answers": [
+      { "text": "O2", "state": false },
+      { "text": "CO2", "state": false },
+      { "text": "H2O", "state": true },
+      { "text": "NaCl", "state": false }
+    ]
+  },
+  {
+    "question": "How many continents are there on Earth?",
+    "answers": [
+      { "text": "5", "state": false },
+      { "text": "6", "state": false },
+      { "text": "7", "state": true },
+      { "text": "8", "state": false }
+    ]
+  },
+  {
+    "question": "What is the capital of France?",
+    "answers": [
+      { "text": "Rome", "state": false },
+      { "text": "Madrid", "state": false },
+      { "text": "Paris", "state": true },
+      { "text": "Berlin", "state": false }
+    ]
+  },
+  {
+    "question": "What is the fastest land animal?",
+    "answers": [
+      { "text": "Cheetah", "state": true },
+      { "text": "Lion", "state": false },
+      { "text": "Horse", "state": false },
+      { "text": "Falcon", "state": false }
+    ]
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "answers": [
+      { "text": "Michelangelo", "state": false },
+      { "text": "Van Gogh", "state": false },
+      { "text": "Leonardo da Vinci", "state": true },
+      { "text": "Picasso", "state": false }
+    ]
+  },
+  {
+    "question": "What is the smallest unit of matter?",
+    "answers": [
+      { "text": "Molecule", "state": false },
+      { "text": "Atom", "state": true },
+      { "text": "Electron", "state": false },
+      { "text": "Cell", "state": false }
+    ]
+  },
+  {
+    "question": "What is the square root of 64?",
+    "answers": [
+      { "text": "6", "state": false },
+      { "text": "7", "state": false },
+      { "text": "8", "state": true },
+      { "text": "9", "state": false }
+    ]
+  },
+  {
+    "question": "Which ocean is the largest in the world?",
+    "answers": [
+      { "text": "Atlantic", "state": false },
+      { "text": "Indian", "state": false },
+      { "text": "Pacific", "state": true },
+      { "text": "Arctic", "state": false }
+    ]
+  },
+  {
+    "question": "How many sides does a pentagon have?",
+    "answers": [
+      { "text": "4", "state": false },
+      { "text": "5", "state": true },
+      { "text": "6", "state": false },
+      { "text": "7", "state": false }
+    ]
+  },
+  {
+    "question": "What is the freezing point of water in Celsius?",
+    "answers": [
+      { "text": "0°C", "state": true },
+      { "text": "10°C", "state": false },
+      { "text": "32°C", "state": false },
+      { "text": "100°C", "state": false }
+    ]
+  },
+  {
+    "question": "What is the main gas found in the Earth’s atmosphere?",
+    "answers": [
+      { "text": "Oxygen", "state": false },
+      { "text": "Nitrogen", "state": true },
+      { "text": "Carbon Dioxide", "state": false },
+      { "text": "Helium", "state": false }
+    ]
+  },
+  {
+    "question": "What is the currency of Japan?",
+    "answers": [
+      { "text": "Dollar", "state": false },
+      { "text": "Yen", "state": true },
+      { "text": "Euro Dioxide", "state": false },
+      { "text": "Pound", "state": false }
+    ]
+  }
+]
