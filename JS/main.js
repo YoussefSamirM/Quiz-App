@@ -5,103 +5,92 @@ fetch(
     let data = response.json();
     return data;
   })
-  .then((data) => {
-    const questions = data;
-    return questions;
-  })
   .then((questions) => {
-    const questionElement = document.querySelector(".question");
-    const answers = document.querySelector(".answers");
-    const nextBtn = document.querySelector(".next");
+    let question = document.querySelector(".question");
+    let answers = document.querySelector(".answers");
+    let nextBtn = document.querySelector(".next-btn");
 
     let currentQuestionIndex = 0;
     let result = 0;
 
-    function start() {
+    function startQuiz() {
+      reset();
+
+      nextBtn.innerHTML = "Next";
+
       currentQuestionIndex = 0;
       result = 0;
 
-      nextBtn.innerHTML = "Next";
-      nextBtn.style = "display:none;";
-
-      changeQuestionsAndAnswers();
+      changeQuestions_Answers();
     }
 
-    function changeQuestionsAndAnswers() {
-      resetState();
+    function changeQuestions_Answers() {
+      reset();
       let currentQuestion = questions[currentQuestionIndex];
+      let currentQuestionNum = currentQuestionIndex + 1;
 
-      let questionNumber = currentQuestionIndex + 1;
-
-      questionElement.innerHTML = `${questionNumber}) ${currentQuestion.question}`;
+      question.innerHTML = `${currentQuestionNum}) ${currentQuestion.question}`;
 
       currentQuestion.answers.forEach((button) => {
         let btn = document.createElement("button");
         btn.classList.add("btn");
         btn.innerHTML = button.text;
+        btn.setAttribute("data-state", button.state);
+
         answers.appendChild(btn);
-
-        btn.dataset.state = button.state;
-
-        if (btn.dataset.state) {
-          btn.dataset.state = button.state;
-        }
 
         btn.addEventListener("click", answerSelected);
       });
     }
 
-    function answerSelected(btn) {
-      let slectedBtn = btn.target;
-      let isCorrect = slectedBtn.dataset.state === "true";
+    function reset() {
+      nextBtn.style.display = "none";
+      while (answers.firstElementChild) {
+        answers.firstElementChild.remove();
+      }
+    }
 
-      if (isCorrect) {
-        slectedBtn.classList.add("correct");
+    function answerSelected(button) {
+      let selectedAnswer = button.target;
+      if (selectedAnswer.dataset.state == "true") {
+        selectedAnswer.classList.add("correct");
         result++;
       } else {
-        slectedBtn.classList.add("incorrect");
+        selectedAnswer.classList.add("incorrect");
       }
+      nextBtn.style.display = "block";
 
-      Array.from(answers.children).forEach((button) => {
-        if (button.dataset.state === "true") {
-          button.classList.add("correct");
+      Array.from(answers.children).forEach((btn) => {
+        if (btn.dataset.state == "true") {
+          btn.classList.add("correct");
         }
-        button.disabled = true;
+        btn.disabled = true;
       });
-      nextBtn.style = "display:block";
     }
 
-    function resetState() {
-      nextBtn.style = "display:none";
-      while (answers.firstChild) {
-        answers.firstChild.remove();
-      }
-    }
-
-    function handleNextBtn() {
+    function nextChecked() {
       currentQuestionIndex++;
       if (currentQuestionIndex < questions.length) {
-        changeQuestionsAndAnswers();
+        changeQuestions_Answers();
       } else {
         showResult();
       }
     }
 
     function showResult() {
-      resetState();
-
+      reset();
+      nextBtn.style.display = "block";
       nextBtn.innerHTML = "Restart Quiz";
-      nextBtn.style = "display:block";
-      questionElement.innerHTML = `Your Result Is ${result} From ${currentQuestionIndex}`;
+      question.innerHTML = `Your Result Is ${result} From ${currentQuestionIndex}`;
     }
 
     nextBtn.addEventListener("click", () => {
       if (currentQuestionIndex < questions.length) {
-        handleNextBtn();
+        nextChecked();
       } else {
-        start();
+        startQuiz();
       }
     });
 
-    start();
+    startQuiz();
   });
